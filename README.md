@@ -1,45 +1,75 @@
-# 📰 Fake News Detection Using Machine Learning
+# 📰 Fake News Prediction Using Machine Learning
 
-A Machine Learning project that classifies news articles as **Fake** or **Real** using Natural Language Processing (NLP) techniques.
+A Machine Learning and Natural Language Processing (NLP) project that classifies news articles as **Fake** or **Real** based on their textual content.
 
 ## 📌 Project Overview
 
-The objective of this project is to build a Machine Learning model that can classify news articles as either **Fake News** or **Real News** based on their textual content.
+The objective of this project is to build a Machine Learning model that can identify whether a given news article is fake or real.
 
-The project uses text preprocessing and TF-IDF feature extraction before training a Logistic Regression classification model.
+The project applies text preprocessing and **TF-IDF feature extraction** to convert news content into numerical features. Multiple classification algorithms are then trained and compared.
 
 ## 🔄 Machine Learning Workflow
 
 1. Load the news dataset
-2. Clean and preprocess the text
-3. Remove stopwords
-4. Apply Porter Stemming
-5. Convert text into numerical features using TF-IDF
-6. Split the dataset into training and testing data
-7. Train a Logistic Regression model
-8. Evaluate the model using accuracy
-9. Test the model on new news data
+2. Explore the dataset
+3. Clean and preprocess the news content
+4. Convert text to lowercase
+5. Remove non-alphabetic characters
+6. Remove English stopwords
+7. Apply **Porter Stemming**
+8. Convert text into numerical features using **TF-IDF**
+9. Split the data into training and testing sets
+10. Train multiple Machine Learning models
+11. Compare model performance
+12. Generate classification reports and confusion matrices
 
-## 🤖 Model
+## 🧹 Text Preprocessing
 
-**Algorithm:** Logistic Regression
+The news content is processed using:
 
-**Feature Extraction:** TF-IDF Vectorization
-
-**NLP Techniques:**
-
-* Stopword removal
+* Removal of non-alphabetic characters
+* Lowercase conversion
+* Tokenization
+* English stopword removal
 * Porter Stemming
-* Text preprocessing
 
-## 📊 Results
+The processed text is then transformed into numerical features using **TF-IDF Vectorization** with a maximum of **5,000 features**.
 
-| Dataset       |   Accuracy |
-| ------------- | ---------: |
-| Training Data | **72.07%** |
-| Test Data     | **49.18%** |
+## 🤖 Machine Learning Models
 
-The model achieved **49.18% accuracy on the test dataset**.
+Three classification algorithms are evaluated:
+
+* **Logistic Regression**
+* **Random Forest**
+* **Support Vector Machine (SVM)**
+
+The models are trained on the same TF-IDF-transformed dataset and their training and test accuracy are compared.
+
+## 📊 Model Evaluation
+
+The notebook evaluates the models using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion Matrix
+
+### Test Performance
+
+| Model               | Test Accuracy |
+| ------------------- | ------------: |
+| Logistic Regression |     **≈ 51%** |
+| Random Forest       |     **≈ 50%** |
+| SVM                 |     **≈ 51%** |
+
+The classification reports show that the current models achieve performance close to random classification on the test dataset.
+
+## 📈 Model Comparison
+
+The project includes a comparison of the trained models based on their training and testing accuracy.
+
+The comparison helps identify how different Machine Learning algorithms perform on the same NLP feature representation.
 
 ## 🛠️ Technologies Used
 
@@ -47,16 +77,20 @@ The model achieved **49.18% accuracy on the test dataset**.
 * NumPy
 * Pandas
 * NLTK
+* Regular Expressions
 * Scikit-learn
-* Natural Language Processing (NLP)
-* TF-IDF
+* TF-IDF Vectorization
 * Logistic Regression
+* Random Forest
+* Support Vector Machine
+* Matplotlib
+* Seaborn
 * Google Colab
 
 ## 📂 Project Structure
 
 ```text
-fake-news-detection/
+fake-news-prediction/
 │
 ├── fake_news_prediction.ipynb
 └── README.md
@@ -67,23 +101,25 @@ fake-news-detection/
 The project can be run using **Google Colab**.
 
 1. Open the notebook in Google Colab.
-2. Upload the required `fake_news_dataset.csv` dataset.
-3. Run the cells sequentially.
-4. The notebook will preprocess the news text.
+2. Upload the required news dataset.
+3. Run the notebook cells sequentially.
+4. The news content will be cleaned and preprocessed.
 5. TF-IDF features will be generated.
-6. The Logistic Regression model will be trained.
-7. The model will evaluate the training and test data.
-8. New news articles can be classified as Fake or Real.
+6. The dataset will be divided into training and testing sets.
+7. Logistic Regression, Random Forest, and SVM models will be trained.
+8. Model performance will be evaluated and compared.
 
 ## 🚀 Future Improvements
 
-* Improve text preprocessing
-* Experiment with different NLP techniques
-* Try other classification algorithms
-* Perform hyperparameter tuning
-* Use additional evaluation metrics such as precision, recall and F1-score
-* Improve test-set performance
-* Explore more advanced NLP and Deep Learning models
+* Improve the text preprocessing pipeline
+* Perform feature engineering
+* Tune model hyperparameters
+* Experiment with different TF-IDF configurations
+* Try n-gram features
+* Address potential data-quality issues
+* Experiment with advanced NLP models
+* Try Transformer-based models such as BERT
+* Improve generalization on unseen news articles
 
 ## 👨‍💻 Author
 
