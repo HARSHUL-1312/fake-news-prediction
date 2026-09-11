@@ -1,34 +1,56 @@
 # 📰 Fake News Detection Using Machine Learning
 
-A Machine Learning project that classifies news articles as **Fake News** or **Real News** based on their textual content.
+A Machine Learning project that classifies news articles as **Fake** or **Real** using Natural Language Processing (NLP) techniques.
 
 ## 📌 Project Overview
 
-The objective of this project is to build a machine learning classification model that can identify whether a given news article is likely to be fake or real.
+The objective of this project is to build a Machine Learning model that can classify news articles as either **Fake News** or **Real News** based on their textual content.
 
-The project follows a standard Machine Learning workflow including data preprocessing, feature extraction, model training, and evaluation.
+The project uses text preprocessing and TF-IDF feature extraction before training a Logistic Regression classification model.
 
-## 🤖 Machine Learning Model
+## 🔄 Machine Learning Workflow
 
-**Algorithm:** Machine Learning Classification Model
+1. Load the news dataset
+2. Clean and preprocess the text
+3. Remove stopwords
+4. Apply Porter Stemming
+5. Convert text into numerical features using TF-IDF
+6. Split the dataset into training and testing data
+7. Train a Logistic Regression model
+8. Evaluate the model using accuracy
+9. Test the model on new news data
 
-The model is trained using news data and learns patterns from the textual content to classify news articles as fake or real.
+## 🤖 Model
+
+**Algorithm:** Logistic Regression
+
+**Feature Extraction:** TF-IDF Vectorization
+
+**NLP Techniques:**
+
+* Stopword removal
+* Porter Stemming
+* Text preprocessing
 
 ## 📊 Results
 
 | Dataset       |   Accuracy |
 | ------------- | ---------: |
-| Training Data | **72.00%** |
+| Training Data | **72.07%** |
+| Test Data     | **49.18%** |
 
-The model achieved **72% accuracy on the training dataset**.
+The model achieved **49.18% accuracy on the test dataset**.
 
 ## 🛠️ Technologies Used
 
 * Python
-* Pandas
 * NumPy
+* Pandas
+* NLTK
 * Scikit-learn
 * Natural Language Processing (NLP)
+* TF-IDF
+* Logistic Regression
 * Google Colab
 
 ## 📂 Project Structure
@@ -36,24 +58,32 @@ The model achieved **72% accuracy on the training dataset**.
 ```text
 fake-news-detection/
 │
-├── fake_news_detection.ipynb
+├── fake_news_prediction.ipynb
 └── README.md
 ```
 
-## ▶️ Run the Project
+## ▶️ How to Run
 
 The project can be run using **Google Colab**.
 
-Open the Jupyter Notebook and run the cells sequentially to preprocess the news data, train the model, evaluate its performance, and make predictions.
+1. Open the notebook in Google Colab.
+2. Upload the required `fake_news_dataset.csv` dataset.
+3. Run the cells sequentially.
+4. The notebook will preprocess the news text.
+5. TF-IDF features will be generated.
+6. The Logistic Regression model will be trained.
+7. The model will evaluate the training and test data.
+8. New news articles can be classified as Fake or Real.
 
 ## 🚀 Future Improvements
 
 * Improve text preprocessing
-* Experiment with different Machine Learning algorithms
-* Try different NLP feature-extraction techniques
-* Evaluate precision, recall, and F1-score
-* Add a confusion matrix
-* Improve overall model performance
+* Experiment with different NLP techniques
+* Try other classification algorithms
+* Perform hyperparameter tuning
+* Use additional evaluation metrics such as precision, recall and F1-score
+* Improve test-set performance
+* Explore more advanced NLP and Deep Learning models
 
 ## 👨‍💻 Author
 
